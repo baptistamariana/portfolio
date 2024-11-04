@@ -1,0 +1,8 @@
+body {
+    background-color: #000000; /*cor de fundo*/
+    color: #ffffff; /*cor letra*/
+}
+
+body strong{
+    color: #f34170;
+}
