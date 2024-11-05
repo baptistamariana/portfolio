@@ -1,8 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+* { /*retirando todas as configurações da página que já existem*/
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    height: 100vh; /*altura*/
+    box-sizing: border-box; /*enquadrar filho dentro do pai*/
     background-color: #000000; /*cor de fundo*/
     color: #ffffff; /*cor letra*/
 }
 
-body strong{
+.titulo-destaque {
     color: #f34170;
 }
+
+.titulo-descricao {
+    color: #f34170;
+}
+
+.apresentacao { /*main é o pai, tudo que está dentro dele será flex*/
+    margin: 10%; /*criou uma margem e jogou pro meio o conteudo*/
+    display: flex;
+    align-items: center; /*centralizando os itens*/
+    justify-content: space-between; /*espaçou e jogou cada elemento filho para um lado*/
+}
+
+.apresentacao__conteudo {
+    width: 615px;/*tamanho do conteúdo no figma*/
+    height: 482px;/*tamanho do conteúdo no figma*/
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 36px; /*tamanho do texto*/
+    font-family: "Playwrite GB S", cursive;/*fonte do texto*/
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 24;/*tamanho do texto*/
+    font-family: "Playwrite GB S", cursive;/*fonte do texto*/
+}
+
+.apresentacao__links {
+    display: flex;/* sempre que usar justify-content, criar o display flex, elemento pai*/
+    justify-content: space-between;
+}
+
+.apresentacao__links__link {
+    background-color: #f34170;
+    width: 280px;/*largura da borda*/
+    text-align: center;/*alinhando texto no centro*/
+    border-radius: 16px;/*arredondando a borda*/
+    font-size: 24px; /*tamanho da fonte*/
+    padding: 21.5px 0;/*texto até final da borda. primeiro valor eixo vertical, segundao valor eixo horizontal*/
+    text-decoration: none; /*retirar decoração do link. retirei linha*/
+    color:#000000;
+    font-family: "Playwrite GB S", cursive;/
+}
+
