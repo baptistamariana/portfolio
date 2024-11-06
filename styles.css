@@ -21,7 +21,7 @@ body {
 }
 
 .apresentacao { /*main é o pai, tudo que está dentro dele será flex*/
-    margin: 10%; /*criou uma margem e jogou pro meio o conteudo*/
+    margin: 10% 15%; /*criou uma margem e jogou pro meio o conteudo*/
     display: flex;
     align-items: center; /*centralizando os itens*/
     justify-content: space-between; /*espaçou e jogou cada elemento filho para um lado*/
@@ -29,7 +29,9 @@ body {
 
 .apresentacao__conteudo {
     width: 615px;/*tamanho do conteúdo no figma*/
-    height: 482px;/*tamanho do conteúdo no figma*/
+    display: flex; /*alinhando os textos*/
+    flex-direction: column;/*para colocar em coluna,após inserir display, o texto foi para a horizontal*/
+    gap: 40px;/*vai dizer qual é o espaçamento entre os elementos filhos*/
 }
 
 .apresentacao__conteudo__titulo {
