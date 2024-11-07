@@ -6,7 +6,7 @@
 }
 
 body {
-    height: 100vh; /*altura*/
+    /*height: 100vh; /*altura*/
     box-sizing: border-box; /*enquadrar filho dentro do pai*/
     background-color: #000000; /*cor de fundo*/
     color: #ffffff; /*cor letra*/
@@ -20,16 +20,33 @@ body {
     color: #f34170;
 }
 
+.cabecalho {
+    padding: 2% 0 0 12%;/*primeiro valor:superior. segundo valor: direito. terceiro valor: inferior. quarto valor: esquerdo.*/
+}
+
+.cabecalho__menu { /*sempre utlizar flexbox no elemento conteiner (pai)*/
+    display: flex;/*inciando o flexbox*/
+    gap: 5%;
+}
+
+.cabecalho__menu__link {
+    font-family: "Playwrite GB S", cursive;
+    font-size: 20px;
+    font-weight: 600;
+    color: #f34170;
+}
+
 .apresentacao { /*main é o pai, tudo que está dentro dele será flex*/
-    margin: 10% 15%; /*criou uma margem e jogou pro meio o conteudo*/
-    display: flex;
+   /* margin: 10% 15%; criou uma margem e jogou pro meio o conteudo*/
+    padding: 4% 12%;
+    display: flex;/*inciando o flexbox*/
     align-items: center; /*centralizando os itens*/
     justify-content: space-between; /*espaçou e jogou cada elemento filho para um lado*/
 }
 
 .apresentacao__conteudo {
     width: 615px;/*tamanho do conteúdo no figma*/
-    display: flex; /*alinhando os textos*/
+    display: flex; /*alinhando os textos. inciando o flexbox*/
     flex-direction: column;/*para colocar em coluna,após inserir display, o texto foi para a horizontal*/
     gap: 40px;/*vai dizer qual é o espaçamento entre os elementos filhos*/
 }
@@ -45,19 +62,44 @@ body {
 }
 
 .apresentacao__links {
-    display: flex;/* sempre que usar justify-content, criar o display flex, elemento pai*/
-    justify-content: space-between;
+    display: flex;/* sempre que usar justify-content, criar o display flex, elemento pai. inciando o flexbox*/
+    justify-content: space-between; /*colocando itens em coluna porque estamos com display flex*/
+    flex-direction: column;
+    align-items: center;
+    gap: 32px; /*espaço entre itens*/
+}
+
+.apresentacao__links__subtitulo {
+    font-family: "Playwrite GB S", cursive;
+    font-weight: 400; /*afinando a fonte*/
+    font-size: 24px;
 }
 
 .apresentacao__links__link {
-    background-color: #f34170;
-    width: 280px;/*largura da borda*/
+    /*background-color: #f34170;*/
+    display: flex;/*posiconando. inciando o flexbox*/
+    justify-content: center; 
+    gap: 16px;
+    border: 2px solid #f34170;/*borda*/
+    width: 378px;/*largura da borda*/
     text-align: center;/*alinhando texto no centro*/
-    border-radius: 16px;/*arredondando a borda*/
-    font-size: 24px; /*tamanho da fonte*/
-    padding: 21.5px 0;/*texto até final da borda. primeiro valor eixo vertical, segundao valor eixo horizontal*/
+    border-radius: 10px;/*arredondando a borda*/
+    font-size: 22px; /*tamanho da fonte*/
+    padding: 15.5px 0;/*texto até final da borda. primeiro valor eixo vertical, segundao valor eixo horizontal*/
     text-decoration: none; /*retirar decoração do link. retirei linha*/
-    color:#000000;
-    font-family: "Playwrite GB S", cursive;/
+    color:#ffffff;
+    font-family: "Playwrite GB S", cursive;
 }
 
+.apresentacao__links__link:hover {
+    background-color: #f34170;
+}
+
+.rodape {
+    padding: 24px;/*não criar margem, se criar margem ia ser da borda pra fora. padding pega da margem pra dentro*/
+    color: #000000;/*cor fonte*/
+    background-color:#f34170;/*cor de fundo*/
+    text-align: center;/*alinhar texto*/
+    font-family: "Playwrite GB S", cursive;
+    font-size: 20px;
+}
