@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header></header>
+    <header class="cabecalho">
+        <nav class="cabecalho__menu">
+            <a class="cabecalho__menu__link">Home</a>
+            <a class="cabecalho__menu__link">Sobre mim</a>
+        </nav>
+    </header>
     <main class="apresentacao">
         <section class="apresentacao__conteudo"> <!--seção para separar foto do texto, agora o pai possui dois filhos-->
         <h1 class="apresentacao__conteudo__titulo">
@@ -17,12 +22,25 @@
             Olá! Sou Mariana Baptista, desenvolvedora Front-end com especialidade em <strong class="titulo-descricao">React, HTML e CSS</strong>. Ajudo pequenos negócios e designers a colocarem em prática boas ideias. Vamos conversar?
         </p>
         <div class="apresentacao__links"><!--a div serve para agrupar contextos simples, é bem específica, vamos usar para agrupar dois botões-->
-        <a class="apresentacao__links__link" href="https://www.instagram.com/marianabaptistas/">Instagram</a>
-        <a class="apresentacao__links__link" href="https://github.com/baptistamariana">Github</a>
+        <h2 class="apresentacao__links__subtitulo"> <!--subtitulo, porque h1 só pode um na página-->
+            Acesse minhas redes:
+        </h2>
+        <a class="apresentacao__links__link" href="https://www.instagram.com/marianabaptistas/">
+            <img src="assets/instagram.png" alt="Icone instagram"> <!--Inserindo imagens do lado do botão-->
+            Instagram
+        </a>
+        <a class="apresentacao__links__link" href="https://github.com/baptistamariana">
+           <img src="assets/github.png" alt="Icone GitHub"> <!--Inserindo imagens do lado do botão-->
+            Github
+        </a>
         </section>
-        <img src="mariana1.jpg" alt="Foto Mariana">
+        <img src="assets/mariana1.jpg" alt="Foto Mariana">
         </div>
     </main>
-    <footer></footer>
+    <footer class="rodape">
+        <p>
+            Desenvolvido por Mariana Baptista.
+        </p>
+    </footer>
 </body>
 </html>
