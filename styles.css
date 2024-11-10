@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
 
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-terciara: #ef4eea;
+
+    --fonte-princial: "Playwrite GB S", cursive;
+}
+
 * { /*retirando todas as configurações da página que já existem*/
     margin: 0;
     padding: 0;
@@ -8,16 +16,16 @@
 body {
     /*height: 100vh; /*altura*/
     box-sizing: border-box; /*enquadrar filho dentro do pai*/
-    background-color: #000000; /*cor de fundo*/
-    color: #ffffff; /*cor letra*/
+    background-color: var(--cor-primaria);/*cor de fundo.*/
+    color: var(--cor-secundaria); /*cor letra*/
 }
 
 .titulo-destaque {
-    color: #f34170;
+    color: var(--cor-terciara);
 }
 
 .titulo-descricao {
-    color: #f34170;
+    color: var(--cor-terciara);
 }
 
 .cabecalho {
@@ -30,10 +38,11 @@ body {
 }
 
 .cabecalho__menu__link {
-    font-family: "Playwrite GB S", cursive;
+    font-family: var(--fonte-princial);
     font-size: 20px;
     font-weight: 600;
-    color: #f34170;
+    color: var(--cor-terciara);
+    text-decoration: none; /*retirar sublinhado*/
 }
 
 .apresentacao { /*main é o pai, tudo que está dentro dele será flex*/
@@ -53,12 +62,12 @@ body {
 
 .apresentacao__conteudo__titulo {
     font-size: 36px; /*tamanho do texto*/
-    font-family: "Playwrite GB S", cursive;/*fonte do texto*/
+    font-family: var(--fonte-princial);/*fonte do texto*/
 }
 
 .apresentacao__conteudo__texto {
     font-size: 24;/*tamanho do texto*/
-    font-family: "Playwrite GB S", cursive;/*fonte do texto*/
+    font-family: var(--fonte-princial);/*fonte do texto*/
 }
 
 .apresentacao__links {
@@ -70,7 +79,7 @@ body {
 }
 
 .apresentacao__links__subtitulo {
-    font-family: "Playwrite GB S", cursive;
+    font-family: var(--fonte-princial);
     font-weight: 400; /*afinando a fonte*/
     font-size: 24px;
 }
@@ -80,26 +89,27 @@ body {
     display: flex;/*posiconando. inciando o flexbox*/
     justify-content: center; 
     gap: 16px;
-    border: 2px solid #f34170;/*borda*/
+    border: 2px solid var(--cor-terciara);/*borda*/
     width: 378px;/*largura da borda*/
     text-align: center;/*alinhando texto no centro*/
     border-radius: 10px;/*arredondando a borda*/
     font-size: 22px; /*tamanho da fonte*/
     padding: 15.5px 0;/*texto até final da borda. primeiro valor eixo vertical, segundao valor eixo horizontal*/
     text-decoration: none; /*retirar decoração do link. retirei linha*/
-    color:#ffffff;
-    font-family: "Playwrite GB S", cursive;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-princial);
 }
 
 .apresentacao__links__link:hover {
-    background-color: #f34170;
+    background-color: var(--cor-terciara);
 }
 
 .rodape {
     padding: 24px;/*não criar margem, se criar margem ia ser da borda pra fora. padding pega da margem pra dentro*/
-    color: #000000;/*cor fonte*/
-    background-color:#f34170;/*cor de fundo*/
+    color: var(--cor-primaria);/*cor fonte*/
+    background-color: var(--cor-terciara);/*cor de fundo*/
     text-align: center;/*alinhar texto*/
-    font-family: "Playwrite GB S", cursive;
+    font-family: var(--fonte-princial);
     font-size: 20px;
 }
+
