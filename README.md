@@ -1,4 +1,4 @@
 Olá! 
 
-Desenvolvi meu primeiro projeto HTML/CSS: um portfólio. 
+Desenvolvi meu primeiro projeto HTML/CSS: meu portfólio. 
 
