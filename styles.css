@@ -1,47 +1,144 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
 
-<body>
-    <header class="cabecalho">
-        <nav class="cabecalho__menu">
-            <a class="cabecalho__menu__link" href="index.html">Home</a>
-            <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
-        </nav>
-    </header>
-    <main class="apresentacao">
-        <section class="apresentacao__conteudo"> <!--seção para separar foto do texto, agora o pai possui dois filhos-->
-        <h1 class="apresentacao__conteudo__titulo">
-            Eleve seu negócio digital a outro nível <strong class="titulo-destaque">com um Front-end de qualidade!</strong>
-        </h1>
-        <p class="apresentacao__conteudo__texto">
-            Olá! Sou Mariana Baptista, desenvolvedora Front-end com especialidade em <strong class="titulo-descricao">React, HTML e CSS</strong>. Ajudo pequenos negócios e designers a colocarem em prática boas ideias. Vamos conversar?
-        </p>
-        <div class="apresentacao__links"><!--a div serve para agrupar contextos simples, é bem específica, vamos usar para agrupar dois botões-->
-        <h2 class="apresentacao__links__subtitulo"> <!--subtitulo, porque h1 só pode um na página-->
-            Acesse minhas redes:
-        </h2>
-        <a class="apresentacao__links__navegacao" href="https://www.instagram.com/marianabaptistas/">
-            <img src="assets/instagram.png" alt="Icone instagram"> <!--Inserindo imagens do lado do botão-->
-            Instagram
-        </a>
-        <a class="apresentacao__links__navegacao    "href="https://github.com/baptistamariana">
-           <img src="assets/github.png" alt="Icone GitHub"> <!--Inserindo imagens do lado do botão-->
-            Github
-        </a>
-        </section>
-        <img class="apresentacao__imagem" src="assets/marianafoto.jpg" alt="Foto Mariana">
-        </div>
-    </main>
-    <footer class="rodape">
-        <p>
-            Desenvolvido por Mariana Baptista.
-        </p>
-    </footer>
-</body>
-</html>
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-terciara: #eb6363;
+
+    --fonte-princial:"Lato", sans-serif; 
+}
+
+* { /*retirando todas as configurações da página que já existem*/
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*height: 100vh; /*altura*/
+    box-sizing: border-box; /*enquadrar filho dentro do pai*/
+    background-color: var(--cor-primaria);/*cor de fundo.*/
+    color: var(--cor-secundaria); /*cor letra*/
+}
+
+.titulo-destaque {
+    color: var(--cor-terciara);
+}
+
+.titulo-descricao {
+    color: var(--cor-terciara);
+}
+
+.cabecalho {
+    padding: 2% 0 0 12%;/*primeiro valor:superior. segundo valor: direito. terceiro valor: inferior. quarto valor: esquerdo.*/
+}
+
+.cabecalho__menu { /*sempre utlizar flexbox no elemento conteiner (pai)*/
+    display: flex;/*inciando o flexbox*/
+    gap: 5%; 
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-princial);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cor-terciara);
+    text-decoration: none; /*retirar sublinhado*/
+}
+
+.apresentacao { /*main é o pai, tudo que está dentro dele será flex*/
+   /* margin: 10% 15%; criou uma margem e jogou pro meio o conteudo*/
+    padding: 4% 12%;
+    display: flex;/*inciando o flexbox*/
+    align-items: center; /*centralizando os itens*/
+    justify-content: space-between; /*espaçou e jogou cada elemento filho para um lado*/
+    align-self: flex-end;
+    gap: 70px;
+}
+
+.apresentacao__conteudo {
+    width: 50%;/*tamanho do conteúdo no figma*/
+    display: flex; /*alinhando os textos. inciando o flexbox*/
+    flex-direction: column;/*para colocar em coluna,após inserir display, o texto foi para a horizontal*/
+    gap: 40px;/*vai dizer qual é o espaçamento entre os elementos filhos*/
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem; /*tamanho do texto. ajustado de % para rem, ajustando responsividade. dividir 36 por 16. 1 rem = 36*/
+    font-family: var(--fonte-princial);/*fonte do texto*/
+    font-weight: 300;
+    font-style: italic;
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;/*tamanho do texto. ajustado de % para rem, ajustando responsividade. dividir 36 por 16. 1 rem = 36*/
+    font-family: var(--fonte-princial);/*fonte do texto*/
+    font-weight: 300;
+    font-style: italic;
+}
+
+.apresentacao__links {
+    display: flex;/* sempre que usar justify-content, criar o display flex, elemento pai. inciando o flexbox*/
+    justify-content: space-between; /*colocando itens em coluna porque estamos com display flex*/
+    flex-direction: column;
+    align-items: center;
+    gap: 32px; /*espaço entre itens*/
+}
+
+.apresentacao__links__subtitulo {
+    font-family: var(--fonte-princial);
+    font-weight: 400; /*afinando a fonte*/
+    font-size: 1.5rem;/*tamanho do texto. ajustado de % para rem, ajustando responsividade. dividir 36 por 16. 1 rem = 36*/
+}
+
+.apresentacao__links__navegacao {
+    /*background-color: #f34170;*/
+    display: flex;/*posiconando. inciando o flexbox*/
+    justify-content: center; 
+    gap: 16px;
+    border: 2px solid var(--cor-terciara);/*borda*/
+    width: 50%;/*largura da borda*/
+    text-align: center;/*alinhando texto no centro*/
+    border-radius: 10px;/*arredondando a borda*/
+    font-size: 22px; /*tamanho da fonte*/
+    padding: 15.5px 0;/*texto até final da borda. primeiro valor eixo vertical, segundao valor eixo horizontal*/
+    text-decoration: none; /*retirar decoração do link. retirei linha*/
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-princial);
+}
+
+.apresentacao__links__link:hover {
+    background-color: var(--cor-terciara);
+}
+
+.apresentacao__imagem {
+    width: 50%; /*imagem em porcentagem para reponividade*/
+}
+
+.rodape {
+    padding: 24px;/*não criar margem, se criar margem ia ser da borda pra fora. padding pega da margem pra dentro*/
+    color: var(--cor-primaria);/*cor fonte*/
+    background-color: var(--cor-terciara);/*cor de fundo*/
+    text-align: center;/*alinhar texto*/
+    font-family: var(--fonte-princial);
+    font-size: 1.25rem;/*tamanho do texto. ajustado de % para rem, ajustando responsividade. dividir 36 por 16. 1 rem = 36*/
+}
+
+@media (max-width: 970px) /*largur maxima*/ {
+
+    .cabecalho {
+        padding: 10%;
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        width: auto; /*ocupando o tamanho da tela*/
+    }
+}
