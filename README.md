@@ -24,6 +24,27 @@ A iniciativa promove o acesso à água potável, estimula a sustentabilidade urb
 
 O sistema promove o **acesso fácil à água potável**, incentiva a **hidratação consciente**, **reduz o uso de garrafas plásticas** e **fortalece a colaboração comunitária**.
 
+## 🖼️ Demonstração
+
+> Substitua a URL abaixo por uma imagem real ou GIF da aplicação:
+
+![Demonstração da plataforma](https://via.placeholder.com/800x400?text=Captura+de+tela+da+aplicacao)
+
+## 🛠️ Tecnologias Utilizadas
+
+- ASP.NET Core MVC (C#)
+- Entity Framework Core
+- HTML5 & CSS3
+- JavaScript
+- SQL Server
+- Azure Web App (Hospedagem)
+- GitHub Actions (CI/CD)
+
+- ## 📌 Status do Projeto
+
+✅ Projeto concluído  
+📅 Última atualização: Junho de 2025
+
 
 ## 👥 Integrantes
 
@@ -56,8 +77,6 @@ Sempre que você der um `push` para a branch `main`, o GitHub Actions executará
 - Executar as Migrations do Entity Framework no banco Azure SQL
 - Publicar a aplicação na Azure Web App
 
----
-
 ### 2. Configure os segredos do GitHub (GitHub Secrets)
 
 Para que o workflow funcione corretamente, você precisa configurar dois secrets no repositório:
@@ -73,8 +92,6 @@ Para que o workflow funcione corretamente, você precisa configurar dois secrets
 - Clique em **New repository secret**
 - Cole os valores corretamente
 
----
-
 ### 3. Estrutura dos diretórios utilizados
 
 Seu projeto está estruturado assim:
@@ -87,8 +104,6 @@ src/
         ├── appsettings.json
         └── ...
 ```
-
----
 
 ### 4. Execução local (opcional)
 
@@ -104,8 +119,6 @@ dotnet ef database update --project src/FicaFrio/FicaFrio/FicaFrio.csproj
 # Roda o projeto
 dotnet run --project src/FicaFrio/FicaFrio/FicaFrio.csproj
 ```
-
----
 
 ### 5. Acesse sua aplicação
 
