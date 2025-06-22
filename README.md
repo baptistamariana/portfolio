@@ -1,4 +1,2 @@
-Olá! 
-
-Desenvolvi meu primeiro projeto HTML/CSS: meu portfólio. 
+<h1 align="center"> FICA FRIO </h1>
 
