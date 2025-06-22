@@ -40,7 +40,7 @@ O sistema promove o **acesso fácil à água potável**, incentiva a **hidrataç
 - Azure Web App (Hospedagem)
 - GitHub Actions (CI/CD)
 
-- ## 📌 Status do Projeto
+## 📌 Status do Projeto
 
 ✅ Projeto concluído  
 📅 Última atualização: Junho de 2025
