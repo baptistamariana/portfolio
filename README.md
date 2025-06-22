@@ -36,16 +36,83 @@ O sistema promove o **acesso fácil à água potável**, incentiva a **hidrataç
 
 **Orientador:** Bernardo Jeunon de Alencar
 
-## 🚀 Como Executar o Projeto
+## 🚀 Como Executar o Projeto Localmente
 
 ### 📥 Pré-requisitos
 
-- [.NET SDK 6.0 ou superior](https://dotnet.microsoft.com/download)
-- [Visual Studio 2022 ou superior](https://visualstudio.microsoft.com/pt-br/) com o workload **.NET** instalado
-- [SQL Server](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads) 
+- [.NET SDK 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) instalado  
+- Visual Studio 2022 (ou superior) ou VS Code com extensão C#  
+- SQL Server local (SQL Server Express, Docker ou outra instância)  
+- Git instalado
 
-### 🔧 Passos para rodar localmente:
+### 🔧 Passos
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
+### 1. Faça um push para a branch `main`
+
+Sempre que você der um `push` para a branch `main`, o GitHub Actions executará automaticamente o pipeline de CI/CD, que irá:
+
+- Restaurar as dependências do projeto
+- Construir o projeto ASP.NET Core
+- Executar as Migrations do Entity Framework no banco Azure SQL
+- Publicar a aplicação na Azure Web App
+
+---
+
+### 2. Configure os segredos do GitHub (GitHub Secrets)
+
+Para que o workflow funcione corretamente, você precisa configurar dois secrets no repositório:
+
+| Nome do segredo | Descrição |
+|-----------------|-----------|
+| `AZURE_SQL_CONNECTION_STRING` | String de conexão completa do banco de dados Azure SQL |
+| `AZUREAPPSERVICE_PUBLISHPROFILE_CDC4E7E12F37428EAF1B2F9F5BF71D8A` | Publish Profile da sua Azure Web App (obtido no portal da Azure) |
+
+#### 📌 Como adicionar:
+- Acesse seu repositório no GitHub
+- Vá em **Settings** → **Secrets and variables** → **Actions**
+- Clique em **New repository secret**
+- Cole os valores corretamente
+
+---
+
+### 3. Estrutura dos diretórios utilizados
+
+Seu projeto está estruturado assim:
+
+```
+src/
+└── FicaFrio/
+    └── FicaFrio/
+        ├── FicaFrio.csproj
+        ├── appsettings.json
+        └── ...
+```
+
+---
+
+### 4. Execução local (opcional)
+
+Se quiser rodar o projeto localmente antes de enviar para produção:
+
+```bash
+# Restaura dependências
+dotnet restore src/FicaFrio/FicaFrio/FicaFrio.csproj
+
+# Aplica migrations (local)
+dotnet ef database update --project src/FicaFrio/FicaFrio/FicaFrio.csproj
+
+# Roda o projeto
+dotnet run --project src/FicaFrio/FicaFrio/FicaFrio.csproj
+```
+
+---
+
+### 5. Acesse sua aplicação
+
+Após o deploy, sua aplicação estará disponível no endereço configurado na Azure Web App:
+
+```plaintext
+https://ficafrio.azurewebsites.net
+```
+
+
